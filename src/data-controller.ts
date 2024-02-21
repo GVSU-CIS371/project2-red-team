@@ -10,7 +10,12 @@ function generateProductHTML(product: Product): string {
 }
 
 function renderProducts(prods: Product[]): void {
-    // your code
+    const container = document.getElementById("main-container");
+    for(let prod in prods){
+        const product = document.createElement("div"); 
+        product.innerHTML = generateProductHTML(prods[prod]); 
+        container?.appendChild(product)
+    }
 }
 
 function getByCategory(category: string): void {
