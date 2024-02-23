@@ -13,7 +13,7 @@
 
   <div id="app">
     <header>
-      <h1>My Store</h1>
+      <h1 id="btnHome">My Store</h1>
       <nav>
         <ul>
           <li><a href="#" id="electronics">Electronics</a></li>
@@ -30,11 +30,15 @@
         renderProducts(products);
 
         // Bind click events using .addEventListener to the navigation links. Upon clicking:
-
+        document.getElementById("btnHome").addEventListener("click", function(){renderProducts(products)});
         // - "Electronics" should display all products categorized as "Electronics."
+        document.getElementById("electronics").addEventListener("click", function(){getByCategory("Electronics")});
         // - "Clothing" should display all products categorized as "Clothing."
+        document.getElementById("clothing").addEventListener("click", function(){getByCategory("Clothing")});
         // - "Groceries" should display all products categorized as "Groceries."
+        document.getElementById("groceries").addEventListener("click", function(){getByCategory("Groceries")});
         // - "Best Seller" should display all products with a rating greater than 4.5.
+        document.getElementById("bestSeller").addEventListener("click", function(){getByRating(4.5)});
 
         
         // your code

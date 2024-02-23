@@ -11,19 +11,26 @@ function generateProductHTML(product: Product): string {
 
 function renderProducts(prods: Product[]): void {
     const container = document.getElementById("main-container");
+    container?.replaceChildren();
     for(let prod in prods){
         const product = document.createElement("div"); 
         product.innerHTML = generateProductHTML(prods[prod]); 
-        container?.appendChild(product)
+        container?.appendChild(product);
     }
 }
 
 function getByCategory(category: string): void {
-    // your code
+    const container = document.getElementById("main-container");
+    container?.replaceChildren();
+    let newArr:any = products.filter((a:Product)=> a.category == category);
+    renderProducts(newArr);
 }
 
 function getByRating(minRating: number): void {
-    // your code
+    const container = document.getElementById("main-container");
+    container?.replaceChildren();
+    let newArr:any = products.filter((a:Product)=> a.rating >= minRating);
+    renderProducts(newArr);
 }
 
 export { renderProducts, getByCategory, getByRating };

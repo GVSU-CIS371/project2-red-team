@@ -64,6 +64,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 3rem;
+  min-height: 80vh;
 }
 
 .store-item {
@@ -72,6 +73,7 @@ main {
   border: 1px solid #274156;
   border-radius: 2rem;
   text-align: center;
+  height: 50vh;
 }
 
 
@@ -101,4 +103,5 @@ footer {
   background-image: linear-gradient(90deg, #274156, #1f4e5f);
   text-align: center;
   color: white;
+  bottom: 0px;
 }
